@@ -1,0 +1,80 @@
+jd_data = {
+    "role_title": "Senior AI Engineer",
+    "min_years_experience": 5,
+    "max_years_experience": 9,
+    "years_experience_flexible": True,
+    "target_locations": ["Pune", "Noida"],
+    "relocation_provided": True,
+    "core_skills_required": [
+        "production experience with embeddings-based retrieval systems",
+        "production experience with vector databases or hybrid search infrastructure",
+        "strong Python",
+        "hands-on experience designing evaluation frameworks for ranking systems",
+    ],
+    "work_ethics_and_behavior": [
+        "scrappy product-engineering attitude",
+        "comfortable with two things that sound contradictory: deep technical depth in modern ML systems and scrappy product-engineering attitude",
+    ],
+    "preferred_past_projects": [
+        "candidate-JD matching at scale",
+        "recruiter-experience PM collaboration",
+    ],
+    "disqualified_titles": ["Researcher", "Architect", "Tech Lead"],
+    "disqualified_backgrounds": [
+        "academic labs",
+        "research-only roles",
+        "closed-source proprietary systems for 5+ years without external validation",
+    ],
+}
+
+states_and_union_territories = [
+    "Andhra Pradesh",
+    "Arunachal Pradesh",
+    "Assam",
+    "Bihar",
+    "Chhattisgarh",
+    "Goa",
+    "Gujarat",
+    "Haryana",
+    "Himachal Pradesh",
+    "Jharkhand",
+    "Karnataka",
+    "Kerala",
+    "Madhya Pradesh",
+    "Maharashtra",
+    "Manipur",
+    "Meghalaya",
+    "Mizoram",
+    "Nagaland",
+    "Odisha",
+    "Punjab",
+    "Rajasthan",
+    "Sikkim",
+    "Tamil Nadu",
+    "Telangana",
+    "Tripura",
+    "Uttar Pradesh",
+    "Uttarakhand",
+    "West Bengal",
+    "Andaman and Nicobar Islands",
+    "Chandigarh",
+    "Dadra and Nagar Haveli and Daman and Diu",
+    "Delhi",
+    "Jammu and Kashmir",
+    "Ladakh",
+    "Lakshadweep",
+    "Puducherry",
+]
+
+current_title_keywords = [
+    "AI",
+    "Machine Learning",
+    "ML",
+    "NLP",
+    "Data",
+    "Recommendation Systems",
+    "Search",
+]
+
+jd_summarized = """Senior Machine Learning Engineer experienced in production grade retrieval and ranking.
+Not solely research based, willing to ship products rapidly."""
