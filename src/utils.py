@@ -1,0 +1,42 @@
+def candidate_to_text(candidate) -> str:
+    career_history = []
+    for career in candidate['career_history']:
+        desc = f"""- {career['company']} ({career['title']})
+Duration: {round(career['duration_months']/12, 1)} years
+Description: {career['description']}"""
+        career_history.append(desc)
+
+    skills = []
+    for skill in candidate['skills']:
+        if skill['proficiency'] in ['expert', 'advanced']:
+            desc = f"""- {skill['name']}"""
+            skills.append(desc)
+
+    return f"""{candidate['profile']['headline']}
+Years Of Experience: {candidate['profile']['years_of_experience']} years
+
+{candidate['profile']['summary']}
+
+Skills
+{'\n'.join(skills)}"""
+
+
+def candidate_to_career_text(candidate) -> str:
+    career_history = []
+    for career in candidate['career_history']:
+        career_history.append(career['description'])
+    return " ".join(career_history)
+
+
+# TODO: Use this, JD states this requirement
+def is_frequent_job_changer(career_history, threshold_months=24, red_flag_ratio=0.5) -> bool:
+    past_roles = [job for job in career_history if not job["is_current"]]
+
+    if not past_roles:
+        return False
+
+    short_stints = sum(
+        1 for job in past_roles if job["duration_months"] < threshold_months)
+    stint_ratio = short_stints / len(past_roles)
+
+    return stint_ratio >= red_flag_ratio
