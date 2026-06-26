@@ -71,7 +71,7 @@ current_title_keywords = [
     "Machine Learning",
     "ML",
     "NLP",
-    "Data",
+    # "Data", # Some data analysts unsuitable for the role were seeping through
     "Recommendation Systems",
     "Search",
 ]
@@ -134,3 +134,35 @@ We genuinely believe culture-fit matters more at this stage than skills-fit. Ski
 We work async-first and write a lot. If you find writing painful, you'll find this role painful.
 We disagree openly and decide quickly. If you find that style abrasive, you'll find this role abrasive.
 We move fast and break things, with the caveat that "things" are usually our internal assumptions, not user-facing systems. If you need a stable, mature codebase to be productive, you'll find this role unstable."""
+
+# This is in-order of priority
+relevant_skill_keywords = ["jd", "ranking", "rag"]
+
+relevant_skill_keyword_replacement = {
+    "rag": "RAG systems",
+    "ranking": "Ranking and Retrieval Systems",
+    "jd": "candidate-JD matching architecture",
+}
+
+relevant_skills = [
+    "Information Retrieval",
+    "pgvector",
+    "Milvus",
+    "Qdrant",
+    "QLoRA",
+    "Sentence Transformers",
+    "Embeddings",
+    "Learning to Rank",
+    "RAG",
+    "Vector Search",
+    "Recommendation Systems",
+    "Pinecone",
+    "Weaviate",
+    "LoRA",
+    "OpenSearch",
+    "Haystack",
+    "BM25",
+    "FAISS",
+    "LlamaIndex",
+    "Fine-tuning LLMs",
+]
