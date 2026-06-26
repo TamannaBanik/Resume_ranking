@@ -18,8 +18,7 @@ class HardFilter:
 
     def filter_on_current_title(self):
         self.filter_list = filter(
-            lambda c: self.__current_title_filter(
-                c), self.filter_list
+            lambda c: self.__current_title_filter(c), self.filter_list
         )
 
     def __yoe_mismatch_filter(self, candidate) -> bool:
@@ -36,8 +35,7 @@ class HardFilter:
 
     def filter_on_years_of_experience_mismatch(self):
         self.filter_list = filter(
-            lambda candidate: self.__yoe_mismatch_filter(
-                candidate), self.filter_list
+            lambda candidate: self.__yoe_mismatch_filter(candidate), self.filter_list
         )
 
     def __location_filter(self, candidate) -> bool:
@@ -60,8 +58,7 @@ class HardFilter:
 
     def filter_on_location(self):
         self.filter_list = filter(
-            lambda candidate: self.__location_filter(
-                candidate), self.filter_list
+            lambda candidate: self.__location_filter(candidate), self.filter_list
         )
 
     def __open_to_work_filter(self, candidate) -> bool:
@@ -71,8 +68,7 @@ class HardFilter:
 
     def filter_on_open_to_work_signal(self):
         self.filter_list = filter(
-            lambda candidate: self.__open_to_work_filter(
-                candidate), self.filter_list
+            lambda candidate: self.__open_to_work_filter(candidate), self.filter_list
         )
 
     def get_filtered_list(self) -> list:

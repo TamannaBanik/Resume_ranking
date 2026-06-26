@@ -15,7 +15,9 @@ class VectorSearch:
         search_table = self.db.open_table("candidate_resumes")
         results = (
             search_table.search(query_vector, vector_column_name=across)
-            .where(f"candidate_id IN ({', '.join(f"'{cid}'" for cid in self.target_candidate_ids)})")
+            .where(
+                f"candidate_id IN ({', '.join(f"'{cid}'" for cid in self.target_candidate_ids)})"
+            )
             .select(["candidate_id", "_distance"])
             .metric("cosine")
             .limit(num_results)
