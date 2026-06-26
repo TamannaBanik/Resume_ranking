@@ -64,5 +64,16 @@ class HardFilter:
                 candidate), self.filter_list
         )
 
+    def __open_to_work_filter(self, candidate) -> bool:
+        if candidate["redrob_signals"]["open_to_work_flag"]:
+            return True
+        return False
+
+    def filter_on_open_to_work_signal(self):
+        self.filter_list = filter(
+            lambda candidate: self.__open_to_work_filter(
+                candidate), self.filter_list
+        )
+
     def get_filtered_list(self) -> list:
         return list(self.filter_list)
