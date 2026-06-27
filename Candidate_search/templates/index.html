@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Recruiter Analytics Dashboard</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <!-- ========================= NAVBAR ========================= -->
+
+    <nav class="navbar navbar-dark bg-primary shadow-sm">
+        <div class="container">
+            <span class="navbar-brand fw-bold">
+                <i class="fa-solid fa-chart-line"></i>
+                Recruiter Analytics Dashboard
+            </span>
+        </div>
+    </nav>
+
+    <div class="container py-4">
+
+        <!-- ========================= SEARCH ========================= -->
+
+        <div class="card dashboard-card mb-4">
+
+            <div class="card-body">
+
+                <form method="POST">
+
+                    <div class="row g-3 align-items-center">
+
+                        <div class="col-lg-10">
+
+                            <input
+                                type="text"
+                                class="form-control form-control-lg"
+                                name="candidate_id"
+                                placeholder="Search Candidate ID (Example: CAND_0000001)"
+                                value="{{ candidate_id }}"
+                                required>
+
+                        </div>
+
+                        <div class="col-lg-2 d-grid">
+
+                            <button class="btn btn-primary btn-lg">
+
+                                <i class="fa-solid fa-magnifying-glass"></i>
+
+                                Search
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </form>
+
+                {% if error %}
+                <div class="alert alert-danger mt-3 mb-0">
+                    {{ error }}
+                </div>
+                {% endif %}
+
+            </div>
+
+        </div>
+
+        {% if candidate %}
+
+        {% set profile = candidate.profile %}
+        {% set signals = candidate.redrob_signals %}
+        {% set career = candidate.career_history %}
+        {% set education = candidate.education %}
+        {% set languages = candidate.languages %}
+        {% set certifications = candidate.certifications %}
+
+        <!-- ========================= PROFILE ========================= -->
+
+        <div class="card dashboard-card mb-4">
+
+            <div class="card-body">
+
+                <div class="d-flex justify-content-between flex-wrap">
+
+                    <div>
+
+                        <h2 class="fw-bold mb-1">
+
+                            {{ profile.anonymized_name }}
+
+                        </h2>
+
+                        {% if profile.headline %}
+                        <h5 class="text-primary">
+                            {{ profile.headline }}
+                        </h5>
+                        {% endif %}
+
+                        <div class="text-muted mt-3">
+
+                            {% if profile.location %}
+                            <p class="mb-1">
+                                <i class="fa-solid fa-location-dot"></i>
+                                {{ profile.location }}, {{ profile.country }}
+                            </p>
+                            {% endif %}
+
+                            <p class="mb-1">
+
+                                <i class="fa-solid fa-id-card"></i>
+
+                                {{ candidate.candidate_id }}
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- ========================= SUMMARY ========================= -->
+
+        {% if profile.summary %}
+
+        <div class="card dashboard-card mb-4">
+
+            <div class="card-header section-title">
+
+                Professional Summary
+
+            </div>
+
+            <div class="card-body">
+
+                {{ profile.summary }}
+
+            </div>
+
+        </div>
+
+        {% endif %}
+
+        <!-- ========================= QUICK STATS ========================= -->
+
+        <div class="card dashboard-card mb-4">
+
+            <div class="card-header section-title">
+
+                Quick Statistics
+
+            </div>
+
+            <div class="card-body">
+
+                <div class="row g-4">
+
+                    {% if profile.years_of_experience %}
+
+                    <div class="col-md-3">
+
+                        <div class="stat-box">
+
+                            <h3>{{ profile.years_of_experience }}</h3>
+
+                            <p>Years Experience</p>
+
+                        </div>
+
+                    </div>
+
+                    {% endif %}
+
+                    {% if profile.current_company %}
+
+                    <div class="col-md-3">
+
+                        <div class="stat-box">
+
+                            <h3>{{ profile.current_company }}</h3>
+
+                            <p>Current Company</p>
+
+                        </div>
+
+                    </div>
+
+                    {% endif %}
+
+                    {% if profile.current_title %}
+
+                    <div class="col-md-3">
+
+                        <div class="stat-box">
+
+                            <h3>{{ profile.current_title }}</h3>
+
+                            <p>Current Role</p>
+
+                        </div>
+
+                    </div>
+
+                    {% endif %}
+
+                    {% if companies_worked %}
+
+                    <div class="col-md-3">
+
+                        <div class="stat-box">
+
+                            <h3>{{ companies_worked|length }}</h3>
+
+                            <p>Companies Worked</p>
+
+                        </div>
+
+                    </div>
+
+                    {% endif %}
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- ========================= PROFESSIONAL EXPERIENCE ========================= -->
+
+        <div class="card dashboard-card mb-4">
+
+            <div class="card-header section-title">
+
+                Professional Experience
+
+            </div>
+
+            <div class="card-body">
+
+                <div class="row">
+
+                    {% if profile.years_of_experience %}
+                    <div class="col-md-4 info-item">
+                        <strong>Years of Experience</strong>
+                        <p>{{ profile.years_of_experience }}</p>
+                    </div>
+                    {% endif %}
+
+                    {% if profile.current_company %}
+                    <div class="col-md-4 info-item">
+                        <strong>Current Company</strong>
+                        <p>{{ profile.current_company }}</p>
+                    </div>
+                    {% endif %}
+
+                    {% if profile.current_title %}
+                    <div class="col-md-4 info-item">
+                        <strong>Current Role</strong>
+                        <p>{{ profile.current_title }}</p>
+                    </div>
+                    {% endif %}
+
+                    {% if profile.current_industry %}
+                    <div class="col-md-4 info-item">
+                        <strong>Industry</strong>
+                        <p>{{ profile.current_industry }}</p>
+                    </div>
+                    {% endif %}
+
+                    {% if profile.current_company_size %}
+                    <div class="col-md-4 info-item">
+                        <strong>Company Size</strong>
+                        <p>{{ profile.current_company_size }}</p>
+                    </div>
+                    {% endif %}
+
+                    {% if companies_worked %}
+                    <div class="col-md-12 info-item">
+
+                        <strong>Companies Worked</strong>
+
+                        <div class="mt-2">
+
+                            {% for company in companies_worked %}
+
+                            <span class="company-pill">
+
+                                {{ company }}
+
+                            </span>
+
+                            {% endfor %}
+
+                        </div>
+
+                    </div>
+                    {% endif %}
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- ========================= RECRUITER METRICS ========================= -->
+
+        {% if recruiter_metrics %}
+
+        <div class="card dashboard-card mb-4">
+
+            <div class="card-header section-title">
+
+                Recruiter Metrics
+
+            </div>
+
+            <div class="card-body">
+
+                <div class="row g-4">
+
+                    {% for metric in recruiter_metrics %}
+
+                    <div class="col-lg-2 col-md-4 col-6">
+
+                        <div class="metric-card">
+
+                            <h2>{{ metric.value }}</h2>
+
+                            <p>{{ metric.label }}</p>
+
+                        </div>
+
+                    </div>
+
+                    {% endfor %}
+
+                </div>
+
+            </div>
+
+        </div>
+
+        {% endif %}
+
+        <!-- ========================= RECRUITER SIGNALS ========================= -->
+
+        {% if recruiter_signals %}
+
+        <div class="card dashboard-card mb-4">
+
+            <div class="card-header section-title">
+
+                Candidate Signals
+
+            </div>
+
+            <div class="card-body">
+
+                <div class="row">
+
+                    {% for signal in recruiter_signals %}
+
+                    <div class="col-lg-4 col-md-6 mb-3">
+
+                        <div class="signal-card">
+
+                            <div class="signal-label">
+
+                                {{ signal.label }}
+
+                            </div>
+
+                            <div class="signal-value">
+
+                                {{ signal.value }}
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    {% endfor %}
+
+                </div>
+
+            </div>
+
+        </div>
+
+        {% endif %}
+
+        <!-- ========================= SKILL ASSESSMENT ========================= -->
+
+        {% if skill_assessment %}
+
+        <div class="card dashboard-card mb-4">
+
+            <div class="card-header section-title">
+
+                Skill Assessment
+
+            </div>
+
+            <div class="card-body">
+
+                {% for skill in skill_assessment %}
+
+                <div class="skill-progress-row">
+
+                    <div class="d-flex justify-content-between">
+
+                        <strong>
+
+                            {{ skill.skill }}
+
+                        </strong>
+
+                        <span>
+
+                            {{ "%.1f"|format(skill.score) }}/100
+
+                        </span>
+
+                    </div>
+
+                    <div class="progress">
+
+                        <div
+                            class="progress-bar"
+                            role="progressbar"
+                            style="width: {{ skill.score }}%;"
+                            aria-valuenow="{{ skill.score }}"
+                            aria-valuemin="0"
+                            aria-valuemax="100">
+                        </div>
+
+                    </div>
+
+                </div>
+
+                {% endfor %}
+
+            </div>
+
+        </div>
+
+        {% endif %}
+
+        <!-- ========================= SKILLS TABLE ========================= -->
+
+        {% if skills_table %}
+
+        <div class="card dashboard-card mb-4">
+
+            <div class="card-header section-title">
+
+                Skills
+
+            </div>
+
+            <div class="card-body table-responsive">
+
+                <table class="table table-hover align-middle">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Skill</th>
+
+                            <th>Proficiency</th>
+
+                            <th>Experience (Months)</th>
+
+                            <th>Endorsements</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        {% for skill in skills_table %}
+
+                        <tr>
+
+                            <td>{{ skill.name }}</td>
+
+                            <td>
+
+                                <span class="proficiency {{ skill.proficiency|lower }}">
+
+                                    {{ skill.proficiency|title }}
+
+                                </span>
+
+                            </td>
+
+                            <td>{{ skill.duration_months }}</td>
+
+                            <td>{{ skill.endorsements }}</td>
+
+                        </tr>
+
+                        {% endfor %}
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+        {% endif %}
+
+        <!-- ========================= CAREER TIMELINE ========================= -->
+
+        {% if career %}
+
+        <div class="card dashboard-card mb-4">
+
+            <div class="card-header section-title">
+
+                Career Timeline
+
+            </div>
+
+            <div class="card-body">
+
+                <div class="timeline">
+
+                    {% for job in career %}
+
+                    <div class="timeline-item">
+
+                        <h5>{{ job.title }}</h5>
+
+                        <h6>{{ job.company }}</h6>
+
+                        <p class="text-muted">
+
+                            {{ job.start_date }}
+
+                            —
+
+                            {{ job.end_date if job.end_date else "Present" }}
+
+                        </p>
+
+                        {% if job.duration_months %}
+                        <p>
+
+                            <strong>Duration:</strong>
+
+                            {{ job.duration_months }} months
+
+                        </p>
+                        {% endif %}
+
+                        {% if job.description %}
+                        <p>{{ job.description }}</p>
+                        {% endif %}
+
+                    </div>
+
+                    {% endfor %}
+
+                </div>
+
+            </div>
+
+        </div>
+
+        {% endif %}
+
+        <!-- ========================= EDUCATION ========================= -->
+
+        {% if education %}
+
+        <div class="card dashboard-card mb-4">
+
+            <div class="card-header section-title">
+
+                Education
+
+            </div>
+
+            <div class="card-body">
+
+                <div class="row">
+
+                    {% for edu in education %}
+
+                    <div class="col-lg-6">
+
+                        <div class="education-card">
+
+                            <h5>{{ edu.institution }}</h5>
+
+                            <p>{{ edu.degree }}</p>
+
+                            <p>{{ edu.field_of_study }}</p>
+
+                            <p>{{ edu.grade }}</p>
+
+                            <p>{{ edu.tier }}</p>
+
+                            <p>
+
+                                {{ edu.start_year }}
+
+                                -
+
+                                {{ edu.end_year }}
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    {% endfor %}
+
+                </div>
+
+            </div>
+
+        </div>
+
+        {% endif %}
+
+        <!-- ========================= LANGUAGES ========================= -->
+
+        {% if languages %}
+
+        <div class="card dashboard-card mb-4">
+
+            <div class="card-header section-title">
+
+                Languages
+
+            </div>
+
+            <div class="card-body">
+
+                <div class="row">
+
+                    {% for lang in languages %}
+
+                    <div class="col-md-3">
+
+                        <div class="language-card">
+
+                            <h5>{{ lang.language }}</h5>
+
+                            <p>{{ lang.proficiency }}</p>
+
+                        </div>
+
+                    </div>
+
+                    {% endfor %}
+
+                </div>
+
+            </div>
+
+        </div>
+
+        {% endif %}
+
+        <!-- ========================= CERTIFICATIONS ========================= -->
+
+        <div class="card dashboard-card mb-4">
+
+            <div class="card-header section-title">
+
+                Certifications
+
+            </div>
+
+            <div class="card-body">
+
+                {% if certifications %}
+
+                <div class="row">
+
+                    {% for cert in certifications %}
+
+                    <div class="col-md-4">
+
+                        <div class="cert-card">
+
+                            {{ cert }}
+
+                        </div>
+
+                    </div>
+
+                    {% endfor %}
+
+                </div>
+
+                {% else %}
+
+                <p class="text-muted mb-0">
+
+                    No certifications listed.
+
+                </p>
+
+                {% endif %}
+
+            </div>
+
+        </div>
+
+        <!-- ========================= SALARY ========================= -->
+
+        {% if signals.expected_salary_range_inr_lpa %}
+
+        <div class="card dashboard-card mb-4">
+
+            <div class="card-header section-title">
+
+                Salary Expectations
+
+            </div>
+
+            <div class="card-body">
+
+                <div class="row">
+
+                    <div class="col-md-6">
+
+                        <strong>Minimum Salary</strong>
+
+                        <p>
+
+                            ₹ {{ signals.expected_salary_range_inr_lpa.min }} LPA
+
+                        </p>
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <strong>Maximum Salary</strong>
+
+                        <p>
+
+                            ₹ {{ signals.expected_salary_range_inr_lpa.max }} LPA
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        {% endif %}
+
+        <!-- ========================= WORK PREFERENCES ========================= -->
+
+        <div class="card dashboard-card mb-4">
+
+            <div class="card-header section-title">
+
+                Work Preferences
+
+            </div>
+
+            <div class="card-body">
+
+                <div class="row">
+
+                    {% if signals.open_to_work_flag is not none %}
+                    <div class="col-md-3">
+                        <strong>Open to Work</strong>
+                        <p>{{ signals.open_to_work_flag }}</p>
+                    </div>
+                    {% endif %}
+
+                    {% if signals.preferred_work_mode %}
+                    <div class="col-md-3">
+                        <strong>Preferred Work Mode</strong>
+                        <p>{{ signals.preferred_work_mode }}</p>
+                    </div>
+                    {% endif %}
+
+                    {% if signals.notice_period_days %}
+                    <div class="col-md-3">
+                        <strong>Notice Period</strong>
+                        <p>{{ signals.notice_period_days }} Days</p>
+                    </div>
+                    {% endif %}
+
+                    {% if signals.willing_to_relocate is not none %}
+                    <div class="col-md-3">
+                        <strong>Relocation</strong>
+                        <p>{{ signals.willing_to_relocate }}</p>
+                    </div>
+                    {% endif %}
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- ========================= VERIFICATION ========================= -->
+
+        <div class="card dashboard-card mb-4">
+
+            <div class="card-header section-title">
+
+                Verification Status
+
+            </div>
+
+            <div class="card-body">
+
+                <div class="row">
+
+                    {% if signals.verified_email is not none %}
+                    <div class="col-md-4">
+                        <strong>Verified Email</strong>
+                        <p>{{ signals.verified_email }}</p>
+                    </div>
+                    {% endif %}
+
+                    {% if signals.verified_phone is not none %}
+                    <div class="col-md-4">
+                        <strong>Verified Phone</strong>
+                        <p>{{ signals.verified_phone }}</p>
+                    </div>
+                    {% endif %}
+
+                    {% if signals.linkedin_connected is not none %}
+                    <div class="col-md-4">
+                        <strong>LinkedIn Connected</strong>
+                        <p>{{ signals.linkedin_connected }}</p>
+                    </div>
+                    {% endif %}
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- ========================= JSON ========================= -->
+
+        <div class="accordion mb-5" id="jsonAccordion">
+
+            <div class="accordion-item">
+
+                <h2 class="accordion-header">
+
+                    <button
+                        class="accordion-button collapsed"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseJson">
+
+                        Original JSON
+
+                    </button>
+
+                </h2>
+
+                <div
+                    id="collapseJson"
+                    class="accordion-collapse collapse">
+
+                    <div class="accordion-body">
+
+                        <pre>{{ json_data }}</pre>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        {% endif %}
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>

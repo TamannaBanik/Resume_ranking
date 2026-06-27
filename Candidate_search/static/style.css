@@ -1,0 +1,466 @@
+/* ==========================================
+   Recruiter Analytics Dashboard v2
+   ========================================== */
+
+:root {
+    --primary: #2563eb;
+    --primary-light: #dbeafe;
+    --success: #16a34a;
+    --warning: #d97706;
+    --danger: #dc2626;
+    --text: #1f2937;
+    --muted: #6b7280;
+    --border: #e5e7eb;
+    --background: #f5f7fb;
+    --card-bg: #ffffff;
+    --shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+    --radius: 16px;
+}
+
+/* ==========================================
+   Base
+   ========================================== */
+
+body {
+    background: var(--background);
+    color: var(--text);
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+    max-width: 1400px;
+}
+
+.dashboard-card {
+    border: none;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: 0.25s ease;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-2px);
+}
+
+.card-header.section-title {
+    background: #fff;
+    font-weight: 700;
+    font-size: 1.05rem;
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--border);
+}
+
+/* ==========================================
+   Navbar
+   ========================================== */
+
+.navbar {
+    padding: 16px 0;
+}
+
+.navbar-brand {
+    font-size: 1.35rem;
+}
+
+/* ==========================================
+   Search
+   ========================================== */
+
+.form-control-lg {
+    border-radius: 12px;
+    padding: 14px 18px;
+}
+
+.btn-primary {
+    border-radius: 12px;
+    font-weight: 600;
+}
+
+/* ==========================================
+   Profile
+   ========================================== */
+
+.info-item {
+    margin-bottom: 22px;
+}
+
+.info-item strong {
+    display: block;
+    color: var(--muted);
+    font-size: .88rem;
+    margin-bottom: 6px;
+}
+
+.info-item p {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+/* ==========================================
+   Statistics
+   ========================================== */
+
+.stat-box {
+    background: #f8fafc;
+    border-radius: 14px;
+    padding: 24px;
+    text-align: center;
+    border: 1px solid var(--border);
+    height: 100%;
+}
+
+.stat-box h3 {
+    color: var(--primary);
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.stat-box p {
+    margin: 0;
+    color: var(--muted);
+}
+
+/* ==========================================
+   Recruiter Metrics
+   ========================================== */
+
+.metric-card {
+    background: white;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    text-align: center;
+    padding: 22px 15px;
+    height: 100%;
+    transition: .25s;
+}
+
+.metric-card:hover {
+    border-color: var(--primary);
+}
+
+.metric-card h2 {
+    color: var(--primary);
+    font-size: 2rem;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.metric-card p {
+    margin: 0;
+    color: var(--muted);
+    font-size: .92rem;
+}
+
+/* ==========================================
+   Candidate Signals
+   ========================================== */
+
+.signal-card {
+    background: #f8fafc;
+    border-left: 5px solid var(--primary);
+    border-radius: 12px;
+    padding: 18px;
+    height: 100%;
+}
+
+.signal-label {
+    color: var(--muted);
+    font-size: .9rem;
+    margin-bottom: 10px;
+}
+
+.signal-value {
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+/* ==========================================
+   Skill Assessment
+   ========================================== */
+
+.skill-progress-row {
+    margin-bottom: 28px;
+}
+
+.progress {
+    height: 14px;
+    border-radius: 50px;
+    background: #e5e7eb;
+    margin-top: 10px;
+}
+
+.progress-bar {
+    background: linear-gradient(90deg, #2563eb, #60a5fa);
+    border-radius: 50px;
+}
+
+/* ==========================================
+   Skills Table
+   ========================================== */
+
+.table {
+    margin-bottom: 0;
+}
+
+.table th {
+    background: #eff6ff;
+    color: var(--text);
+    font-weight: 700;
+    border-bottom: 2px solid var(--border);
+}
+
+.table td,
+.table th {
+    vertical-align: middle;
+    padding: 14px;
+}
+
+.table tbody tr:hover {
+    background: #f8fafc;
+}
+
+/* ==========================================
+   Proficiency Pills
+   ========================================== */
+
+.proficiency {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 30px;
+    font-size: .82rem;
+    font-weight: 600;
+}
+
+.proficiency.advanced {
+    background: #dcfce7;
+    color: var(--success);
+}
+
+.proficiency.intermediate {
+    background: #fef3c7;
+    color: var(--warning);
+}
+
+.proficiency.beginner {
+    background: #fee2e2;
+    color: var(--danger);
+}
+
+/* ==========================================
+   Company Pills
+   ========================================== */
+
+.company-pill {
+    display: inline-block;
+    background: var(--primary-light);
+    color: var(--primary);
+    padding: 8px 14px;
+    border-radius: 50px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    font-weight: 600;
+    font-size: .88rem;
+}
+
+/* ==========================================
+   Timeline
+   ========================================== */
+
+.timeline {
+    position: relative;
+    margin-left: 24px;
+    padding-left: 30px;
+    border-left: 3px solid #dbeafe;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 40px;
+    padding: 0 0 8px 10px;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-item::before {
+    content: "";
+    width: 16px;
+    height: 16px;
+    background: var(--primary);
+    border-radius: 50%;
+    position: absolute;
+    left: -39px;
+    top: 5px;
+    border: 4px solid white;
+    box-shadow: 0 0 0 2px var(--primary-light);
+}
+
+.timeline-item h5 {
+    margin-bottom: 4px;
+    font-weight: 700;
+}
+
+.timeline-item h6 {
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+.timeline-item p {
+    margin-bottom: 8px;
+}
+
+/* ==========================================
+   Education
+   ========================================== */
+
+.education-card {
+    background: #f8fafc;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    padding: 20px;
+    margin-bottom: 20px;
+    height: 100%;
+}
+
+.education-card h5 {
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.education-card p {
+    margin-bottom: 8px;
+}
+
+/* ==========================================
+   Language
+   ========================================== */
+
+.language-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    text-align: center;
+    padding: 22px;
+    margin-bottom: 20px;
+    transition: .2s;
+}
+
+.language-card:hover {
+    border-color: var(--primary);
+}
+
+.language-card h5 {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.language-card p {
+    color: var(--muted);
+    margin: 0;
+}
+
+/* ==========================================
+   Certifications
+   ========================================== */
+
+.cert-card {
+    background: #eff6ff;
+    border-left: 5px solid var(--primary);
+    border-radius: 14px;
+    padding: 18px;
+    margin-bottom: 18px;
+    font-weight: 600;
+}
+
+/* ==========================================
+   JSON Viewer
+   ========================================== */
+
+pre {
+    background: #0f172a;
+    color: #f8fafc;
+    border-radius: 14px;
+    padding: 22px;
+    max-height: 650px;
+    overflow: auto;
+    font-size: .88rem;
+    line-height: 1.5;
+}
+
+/* ==========================================
+   Accordion
+   ========================================== */
+
+.accordion-button {
+    font-weight: 600;
+}
+
+.accordion-button:not(.collapsed) {
+    background: #eff6ff;
+    color: var(--primary);
+}
+
+/* ==========================================
+   Responsive
+   ========================================== */
+
+@media (max-width: 992px) {
+
+    .timeline {
+        margin-left: 10px;
+    }
+
+    .timeline-item::before {
+        left: -35px;
+    }
+
+    .metric-card h2 {
+        font-size: 1.5rem;
+    }
+
+    .stat-box h3 {
+        font-size: 1.5rem;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .navbar-brand {
+        font-size: 1.05rem;
+    }
+
+    .card-header.section-title {
+        font-size: 1rem;
+    }
+
+    .timeline {
+        margin-left: 0;
+        padding-left: 24px;
+    }
+
+    .timeline-item::before {
+        left: -29px;
+    }
+
+    .metric-card,
+    .language-card,
+    .education-card,
+    .signal-card {
+        margin-bottom: 15px;
+    }
+
+    .company-pill {
+        display: block;
+        width: fit-content;
+    }
+
+    .progress {
+        height: 12px;
+    }
+
+}
