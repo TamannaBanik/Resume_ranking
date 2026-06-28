@@ -12,10 +12,10 @@ Description: {career['description']}"""
             desc = f"""- {skill['name']}"""
             skills.append(desc)
 
+    # Initially candidate text did have symmary but that did not provide significant improvements
+    # Instead it seeped in a fed candidates with great summary but not-so-good career record
     return f"""{candidate['profile']['headline']}
 Years Of Experience: {candidate['profile']['years_of_experience']} years
-
-{candidate['profile']['summary']}
 
 Skills
 {'\n'.join(skills)}"""
