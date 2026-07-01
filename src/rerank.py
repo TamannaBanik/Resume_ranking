@@ -1,12 +1,13 @@
-from sentence_transformers import CrossEncoder
-from utils import candidate_to_text
-import torch
 import os
+
+import torch
+from sentence_transformers import CrossEncoder
 
 os.environ["TRANSFORMERS_OFFLINE"] = "1"
 os.environ["HF_DATASETS_OFFLINE"] = "1"
 
 torch.set_num_threads(2)
+from utils import candidate_to_text
 
 
 class CrossEncoderReranker:
