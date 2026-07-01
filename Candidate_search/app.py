@@ -1,10 +1,11 @@
 import json
 from pathlib import Path
+
 from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
-DATA_FILE = Path("candidates.jsonl")
+DATA_FILE = Path("dataset/candidates.jsonl")
 
 
 # -------------------------------------------------
