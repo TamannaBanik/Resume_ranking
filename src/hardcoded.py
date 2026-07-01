@@ -1,9 +1,12 @@
+import random
+
 jd_data = {
     "role_title": "Senior AI Engineer",
     "min_years_experience": 5,
     "max_years_experience": 9,
     "years_experience_flexible": True,
     "target_locations": ["Pune", "Noida"],
+    "target_country": "India",
     "relocation_provided": True,
     "core_skills_required": [
         "production experience with embeddings-based retrieval systems",
@@ -19,7 +22,7 @@ jd_data = {
         "candidate-JD matching at scale",
         "recruiter-experience PM collaboration",
     ],
-    "disqualified_titles": ["Researcher", "Architect", "Tech Lead"],
+    "disqualified_titles": ["Researcher", "Architect"],
     "disqualified_backgrounds": [
         "academic labs",
         "research-only roles",
@@ -27,51 +30,12 @@ jd_data = {
     ],
 }
 
-states_and_union_territories = [
-    "Andhra Pradesh",
-    "Arunachal Pradesh",
-    "Assam",
-    "Bihar",
-    "Chhattisgarh",
-    "Goa",
-    "Gujarat",
-    "Haryana",
-    "Himachal Pradesh",
-    "Jharkhand",
-    "Karnataka",
-    "Kerala",
-    "Madhya Pradesh",
-    "Maharashtra",
-    "Manipur",
-    "Meghalaya",
-    "Mizoram",
-    "Nagaland",
-    "Odisha",
-    "Punjab",
-    "Rajasthan",
-    "Sikkim",
-    "Tamil Nadu",
-    "Telangana",
-    "Tripura",
-    "Uttar Pradesh",
-    "Uttarakhand",
-    "West Bengal",
-    "Andaman and Nicobar Islands",
-    "Chandigarh",
-    "Dadra and Nagar Haveli and Daman and Diu",
-    "Delhi",
-    "Jammu and Kashmir",
-    "Ladakh",
-    "Lakshadweep",
-    "Puducherry",
-]
-
 current_title_keywords = [
     "AI",
+    "Artificial Intelligence",
     "Machine Learning",
     "ML",
     "NLP",
-    # "Data", # Some data analysts unsuitable for the role were seeping through
     "Recommendation Systems",
     "Search",
 ]
@@ -103,13 +67,38 @@ Things you absolutely need
 
 Location: Pune / Noida"""
 
-# This is in-order of priority
-relevant_skill_keywords = ["jd", "ranking", "rag"]
+
+def relevant_skill_keywords():
+    s1 = ["jd"]
+    s2 = ["qlora", "lora", "peft"]
+    s3 = ["pinecone", "weaviate", "qdrant", "milvus", "opensearch", "elasticsearch"]
+    s4 = ["rag", "ranking", "xgboost"]
+    s5 = ["ndcg", "mrr"]
+    s6 = ["bm25", "faiss"]
+
+    [random.shuffle(s) for s in [s1, s2, s3, s4, s5, s6]]
+    arr = [s1, s2, s3, s4, s5, s6]
+    return arr
+
 
 relevant_skill_keyword_replacement = {
-    "rag": "RAG systems",
-    "ranking": "Ranking and Retrieval Systems",
     "jd": "candidate-JD matching architecture",
+    "rag": "RAG systems",
+    "ranking": "ranking and retrieval",
+    "xgboost": "XGBoost",
+    "qlora": "fine tuning LLMs",
+    "lora": "fine tuning LLMs",
+    "peft": "fine tuning LLMs",
+    "bm25": "BM25",
+    "faiss": "FAISS",
+    "pinecone": "vector databases",
+    "weaviate": "vector databases",
+    "qdrant": "vector databases",
+    "milvus": "vector databases",
+    "opensearch": "search engines",
+    "elasticsearch": "search engines",
+    "ndcg": "evaluation metrics",
+    "mrr": "evaluation metrics",
 }
 
 relevant_skills = [
