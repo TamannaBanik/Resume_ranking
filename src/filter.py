@@ -1,4 +1,4 @@
-from hardcoded import jd_data, states_and_union_territories, current_title_keywords
+from hardcoded import current_title_keywords, jd_data
 
 
 class HardFilter:
@@ -40,20 +40,13 @@ class HardFilter:
 
     def __location_filter(self, candidate) -> bool:
         for target_location in jd_data["target_locations"]:
-            sp = candidate["profile"]["location"].split(",")
-            location_state = (sp[1] if len(sp) > 1 else sp[0]).strip()
-            if target_location in candidate["profile"]["location"] or (
-                target_location not in candidate["profile"]["location"]
-                and location_state in states_and_union_territories
-            ):
-                if not candidate.get("__rank_meta"):
-                    candidate["__rank_meta"] = {}
-                if candidate["redrob_signals"]["willing_to_relocate"]:
-                    candidate["__rank_meta"]["location_boost"] = True
-                else:
-                    candidate["__rank_meta"]["location_boost"] = False
+            if target_location in candidate["profile"]["location"]:
                 return True
-                break
+            elif (
+                candidate["profile"]["country"] == jd_data["target_country"]
+                and candidate["redrob_signals"]["willing_to_relocate"]
+            ):
+                return True
         return False
 
     def filter_on_location(self):
