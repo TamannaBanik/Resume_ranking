@@ -18,3 +18,4 @@ models/ettin-reranker-32m-v1/4_Dense/model.safetensors filter=lfs diff=lfs merge
 models/ettin-reranker-32m-v1/config.json filter=lfs diff=lfs merge=lfs -text
 models/ettin-reranker-32m-v1/config_sentence_transformers.json filter=lfs diff=lfs merge=lfs -text
 models/ettin-reranker-32m-v1/modules.json filter=lfs diff=lfs merge=lfs -text
+candidates.jsonl filter=lfs diff=lfs merge=lfs -text
