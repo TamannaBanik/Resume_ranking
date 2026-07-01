@@ -1,0 +1,101 @@
+candidate_id,rank,score,reasoning
+CAND_0018499,1,0.6878,"Senior Machine Learning Engineer with 7 years experienced in candidate-JD matching architecture, fine tuning LLMs, RAG systems, evaluation metrics, BM25; Strong platform activity & visibility;"
+CAND_0007009,2,0.6626,"Recommendation Systems Engineer with 8 years experienced in search engines, RAG systems, FAISS; Strong platform activity & visibility;"
+CAND_0081846,3,0.6184,"Lead AI Engineer with 7 years experienced in ranking and retrieval, evaluation metrics, FAISS; Strong platform activity & visibility;"
+CAND_0046525,4,0.5963,"Senior Machine Learning Engineer with 6 years experienced in RAG systems, evaluation metrics, BM25; Strong platform activity & visibility;"
+CAND_0062247,5,0.5823,"AI Engineer with 7 years experienced in search engines, ranking and retrieval, FAISS; Strong platform activity & visibility;"
+CAND_0050454,6,0.5801,"AI Engineer with 7 years experienced in search engines, ranking and retrieval, FAISS; Strong platform activity & visibility;"
+CAND_0027691,7,0.5711,"NLP Engineer with 6 years experienced in search engines, ranking and retrieval, FAISS; Strong profile and technical presence;"
+CAND_0030348,8,0.4753,"4 years of experience working on search engines, ranking and retrieval, FAISS;"
+CAND_0028793,9,0.4469,"Search Engineer with 7 years experienced in vector databases, ranking and retrieval, BM25; Strong platform activity & visibility; Concerns over notice period (120 days);"
+CAND_0054394,10,0.4452,"4 years of experience working on search engines, ranking and retrieval, BM25;"
+CAND_0069905,11,0.4318,"Applied ML Engineer with 7 years experienced in vector databases, RAG systems, BM25; Strong platform activity & visibility; Concerns over notice period (90 days);"
+CAND_0086151,12,0.4306,"Recommendation Systems Engineer with 8 years experienced in search engines, ranking and retrieval, BM25; Strong platform activity & visibility; Concerns over notice period (120 days);"
+CAND_0039383,13,0.4108,"Applied ML Engineer with 7 years experienced in search engines, XGBoost, BM25; Strong profile and technical presence; Concerns over notice period (90 days);"
+CAND_0037566,14,0.4041,"Machine Learning Engineer with 7 years experienced in vector databases, RAG systems; Strong platform activity & visibility; Concerns over lack of relevant skills;"
+CAND_0041669,15,0.3816,"Recommendation Systems Engineer with 8 years experienced in vector databases, RAG systems; Strong recruiter engagement; Concerns over lack of relevant skills;"
+CAND_0052328,16,0.3739,"Recommendation Systems Engineer with 6 years experienced in vector databases, RAG systems; Strong recruiter engagement; Concerns over lack of relevant skills;"
+CAND_0066999,17,0.3666,Recommendation Systems Engineer with 6 years; Strong profile and technical presence; Concerns over severe lack of relevant skills;
+CAND_0068811,18,0.3659,"Applied ML Engineer with 8 years experienced in vector databases, RAG systems; Strong platform activity & visibility; Concerns over lack of relevant skills;"
+CAND_0005477,19,0.3594,6 years of experience working on XGBoost; Concerns over lack of relevant skills;
+CAND_0058575,20,0.3578,"6 years of experience working on search engines, RAG systems, BM25; Concerns over notice period (90 days);"
+CAND_0000273,21,0.3571,6 years of experience working on ranking and retrieval; Concerns over lack of relevant skills;
+CAND_0032216,22,0.3541,6 years of experience working on XGBoost; Concerns over lack of relevant skills;
+CAND_0003841,23,0.3483,5 years of experience working on ranking and retrieval; Concerns over lack of relevant skills;
+CAND_0017093,24,0.3433,ML Engineer with 6 years; Strong platform activity & visibility; Concerns over severe lack of relevant skills;
+CAND_0075481,25,0.3363,4 years of experience working on XGBoost; Concerns over lack of relevant skills;
+CAND_0019880,26,0.3339,6 years of experience working on XGBoost; Concerns over lack of relevant skills;
+CAND_0006567,27,0.3337,Senior AI Engineer with 8 years; Strong recruiter engagement; Concerns over severe lack of relevant skills;
+CAND_0026532,28,0.3320,"5 years of experience working on search engines, ranking and retrieval, FAISS; Concerns over notice period (90 days);"
+CAND_0053605,29,0.3246,Senior Software Engineer (ML) with 7 years; Strong recruiter engagement; Concerns over severe lack of relevant skills;
+CAND_0040178,30,0.3235,5 years of experience working on ranking and retrieval; Concerns over lack of relevant skills;
+CAND_0011263,31,0.3223,5 years of experience working on XGBoost; Concerns over lack of relevant skills;
+CAND_0012837,32,0.3222,6 years of experience working on ranking and retrieval; Concerns over lack of relevant skills;
+CAND_0064130,33,0.3217,7 years of experience working on XGBoost; Concerns over lack of relevant skills;
+CAND_0033179,34,0.3204,AI Research Engineer with 7 years; Strong platform activity & visibility; Concerns over severe lack of relevant skills;
+CAND_0040946,35,0.3174,6 years of experience working on XGBoost; Concerns over lack of relevant skills;
+CAND_0008295,36,0.3098,AI Research Engineer with 6 years; Strong recruiter engagement; Concerns over severe lack of relevant skills;
+CAND_0005191,37,0.3095,6 years of experience working on XGBoost; Concerns over lack of relevant skills;
+CAND_0075574,38,0.3048,"6 years of experience working on vector databases, XGBoost; Concerns over lack of relevant skills;"
+CAND_0083879,39,0.3046,Machine Learning Engineer with 7 years; Strong platform activity & visibility; Concerns over severe lack of relevant skills;
+CAND_0041696,40,0.2979,6 years of experience working on XGBoost; Concerns over lack of relevant skills;
+CAND_0098454,41,0.2940,AI Specialist with 7 years; Strong platform activity & visibility; Concerns over severe lack of relevant skills;
+CAND_0036121,42,0.2934,ML Engineer with 5 years; Strong profile and technical presence; Concerns over severe lack of relevant skills;
+CAND_0040099,43,0.2930,4 years of experience working on XGBoost; Concerns over lack of relevant skills;
+CAND_0068932,44,0.2928,ML Engineer with 5 years; Strong platform activity & visibility; Concerns over severe lack of relevant skills;
+CAND_0046132,45,0.2913,4 years of experience working on ranking and retrieval; Concerns over lack of relevant skills;
+CAND_0068410,46,0.2888,Senior Software Engineer (ML) with 6 years; Strong platform activity & visibility; Concerns over severe lack of relevant skills;
+CAND_0018549,47,0.2874,Recommendation Systems Engineer with 7 years; Strong platform activity & visibility; Concerns over severe lack of relevant skills;
+CAND_0061257,48,0.2873,Staff Machine Learning Engineer with 8 years; Strong platform activity & visibility; Concerns over severe lack of relevant skills;
+CAND_0007567,49,0.2864,AI Specialist with 6 years; Strong recruiter engagement; Concerns over severe lack of relevant skills;
+CAND_0070333,50,0.2795,5 years of experience working on ranking and retrieval; Concerns over lack of relevant skills;
+CAND_0091890,51,0.2794,5 years of experience working on XGBoost; Concerns over lack of relevant skills;
+CAND_0043860,52,0.2774,Junior ML Engineer with 6 years; Strong platform activity & visibility; Concerns over severe lack of relevant skills;
+CAND_0019288,53,0.2751,AI Research Engineer with 6 years; Strong platform activity & visibility; Concerns over severe lack of relevant skills;
+CAND_0006418,54,0.2737,Machine Learning Engineer with 6 years; Strong platform activity & visibility; Concerns over severe lack of relevant skills;
+CAND_0019480,55,0.2729,"NLP Engineer with 3 years experienced in vector databases, XGBoost; Strong platform activity & visibility; Concerns over notice period (90 days), lack of relevant skills;"
+CAND_0070514,56,0.2707,AI Specialist with 6 years; Strong recruiter engagement; Concerns over severe lack of relevant skills;
+CAND_0073314,57,0.2694,Senior Software Engineer (ML) with 5 years; Strong platform activity & visibility; Concerns over severe lack of relevant skills;
+CAND_0009691,58,0.2691,"6 years of experience working on ranking and retrieval; Concerns over notice period (120 days), lack of relevant skills;"
+CAND_0027723,59,0.2684,4 years of experience working on ranking and retrieval; Concerns over lack of relevant skills;
+CAND_0080344,60,0.2684,"5 years of experience working on ranking and retrieval; Concerns over notice period (90 days), lack of relevant skills;"
+CAND_0066791,61,0.2682,"6 years of experience working on XGBoost; Concerns over notice period (120 days), lack of relevant skills;"
+CAND_0030946,62,0.2679,Junior ML Engineer with 7 years; Strong platform activity & visibility; Concerns over severe lack of relevant skills;
+CAND_0022870,63,0.2678,AI Specialist with 7 years; Strong platform activity & visibility; Concerns over severe lack of relevant skills;
+CAND_0060886,64,0.2675,5 years of experience working on XGBoost; Concerns over lack of relevant skills;
+CAND_0087494,65,0.2645,3 years of experience working on ranking and retrieval; Concerns over lack of relevant skills;
+CAND_0014715,66,0.2628,4 years of experience working on ranking and retrieval; Concerns over lack of relevant skills;
+CAND_0098952,67,0.2627,AI Research Engineer with 6 years; Strong platform activity & visibility; Concerns over severe lack of relevant skills;
+CAND_0007631,68,0.2617,AI Specialist with 5 years; Strong platform activity & visibility; Concerns over severe lack of relevant skills;
+CAND_0026942,69,0.2605,Junior ML Engineer with 6 years; Strong platform activity & visibility; Concerns over severe lack of relevant skills;
+CAND_0043304,70,0.2604,"6 years of experience working on ranking and retrieval; Concerns over notice period (90 days), lack of relevant skills;"
+CAND_0098288,71,0.2594,Junior ML Engineer with 7 years; Strong platform activity & visibility; Concerns over severe lack of relevant skills;
+CAND_0001131,72,0.2589,"6 years of experience working on XGBoost; Concerns over notice period (90 days), lack of relevant skills;"
+CAND_0078492,73,0.2588,Recommendation Systems Engineer with 5 years; Strong platform activity & visibility; Concerns over severe lack of relevant skills;
+CAND_0031593,74,0.2587,"Search Engineer with 8 years experienced in vector databases, ranking and retrieval; Strong platform activity & visibility; Concerns over notice period (90 days), lack of relevant skills;"
+CAND_0099806,75,0.2577,AI Engineer with 5 years; Strong profile and technical presence; Concerns over severe lack of relevant skills;
+CAND_0012840,76,0.2547,4 years of experience working on XGBoost; Concerns over lack of relevant skills;
+CAND_0018013,77,0.2532,"7 years of experience working on ranking and retrieval; Concerns over notice period (90 days), lack of relevant skills;"
+CAND_0094685,78,0.2528,4 years of experience working on ranking and retrieval; Concerns over lack of relevant skills;
+CAND_0008239,79,0.2519,4 years of experience working on ranking and retrieval; Concerns over lack of relevant skills;
+CAND_0069248,80,0.2518,"5 years of experience working on XGBoost; Concerns over notice period (120 days), lack of relevant skills;"
+CAND_0020991,81,0.2509,"5 years of experience working on ranking and retrieval; Concerns over notice period (120 days), lack of relevant skills;"
+CAND_0073883,82,0.2505,"5 years of experience working on ranking and retrieval; Concerns over notice period (90 days), lack of relevant skills;"
+CAND_0014683,83,0.2498,"6 years of experience working on ranking and retrieval; Concerns over notice period (120 days), lack of relevant skills;"
+CAND_0070398,84,0.2492,"Machine Learning Engineer with 7 years experienced in search engines, ranking and retrieval, BM25; Concerns over notice period (120 days), lack of overall engagement, included as filler;"
+CAND_0028647,85,0.2489,4 years of experience working on ranking and retrieval; Concerns over lack of relevant skills;
+CAND_0076831,86,0.2486,"4 years of experience working on XGBoost; Concerns over notice period (90 days), lack of relevant skills;"
+CAND_0044248,87,0.2473,"7 years of experience working on XGBoost; Concerns over notice period (120 days), lack of relevant skills;"
+CAND_0076107,88,0.2465,4 years of experience working on XGBoost; Concerns over lack of relevant skills;
+CAND_0069718,89,0.2464,6 years of experience; Concerns over severe lack of relevant skills;
+CAND_0084460,90,0.2460,6 years of experience; Concerns over severe lack of relevant skills;
+CAND_0098217,91,0.2454,6 years of experience; Concerns over severe lack of relevant skills;
+CAND_0017590,92,0.2449,5 years of experience; Concerns over severe lack of relevant skills;
+CAND_0045475,93,0.2420,5 years of experience; Concerns over severe lack of relevant skills;
+CAND_0081053,94,0.2409,"5 years of experience working on ranking and retrieval; Concerns over notice period (90 days), lack of relevant skills;"
+CAND_0047542,95,0.2404,5 years of experience; Concerns over severe lack of relevant skills;
+CAND_0043676,96,0.2402,6 years of experience; Concerns over severe lack of relevant skills;
+CAND_0081086,97,0.2394,5 years of experience; Concerns over severe lack of relevant skills;
+CAND_0099751,98,0.2392,"6 years of experience working on ranking and retrieval; Concerns over notice period (120 days), lack of relevant skills;"
+CAND_0007460,99,0.2390,"5 years of experience working on ranking and retrieval; Concerns over notice period (120 days), lack of relevant skills;"
+CAND_0076251,100,0.2367,"Search Engineer with 8 years experienced in search engines, BM25; Concerns over lack of relevant skills, lack of overall engagement, included as filler;"
